@@ -32,35 +32,19 @@ class Map
   end
 
   def can_move_n
-    if @x == 0
-      false
-    else
-      true
-    end
+    return @x != 0
   end
 
   def can_move_e
-    if @y == 2
-      false
-    else
-      true
-    end
+    return @y != 2
   end
 
   def can_move_s
-    if @x == 2
-      false
-    else
-      true
-    end
+    return @x != 2
   end
 
   def can_move_w
-    if @y == 0
-      false
-    else
-      true
-    end
+    return @y != 0
   end
 
   def move (direction)
