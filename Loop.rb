@@ -28,6 +28,8 @@ class Loop
       elsif direction == 'south'
         if map.can_move_s == false
           puts "The way is blocked."
+        elsif map.check_walls_s == true
+          puts "There is an obstruction."
         else
           map.move('south')
         end

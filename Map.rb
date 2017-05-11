@@ -5,6 +5,7 @@ class Map
     @x = 1
     @y = 1
     d0 = Location.new ("There is a sheer clifface to the North, and Marsh to the West")
+    d0.s_wall = true
     d1 = Location.new ("Tracks, moving East along the base of a clifface to the North.")
     d2 = Location.new ("Tracks lead up to a sheer clifface and reveal a steep path...")
     d3 = Location.new ("A methane swamp dominates the western horizon.")
@@ -36,15 +37,35 @@ class Map
   end
 
   def can_move_e
-    return @y != 2
+    return @y < @map.length - 1
   end
 
   def can_move_s
-    return @x != 2
+    return @x < @map.length - 1
   end
 
   def can_move_w
     return @y != 0
+  end
+
+  def check_walls_n
+    location = @map[@x][@y]
+    return location.n_wall
+  end
+
+  def check_walls_e
+    location = @map[@x][@y]
+    return location.e_wall
+  end
+
+  def check_walls_s
+    location = @map[@x][@y]
+    return location.s_wall
+  end
+
+  def check_walls_w
+    location = @map[@x][@y]
+    return location.w_wall
   end
 
   def move (direction)
