@@ -10,18 +10,24 @@ class Loop
       if direction == 'east'
         if map.can_move_e == false
           puts "The way is blocked."
+        elsif map.check_walls_e == true
+          puts "There is an obstruction."
         else
           map.move('east')
         end
       elsif direction == 'west'
         if map.can_move_w == false
           puts "The way is blocked."
+        elsif map.check_walls_w == true
+          puts "There is an obstruction."
         else
           map.move('west')
         end
       elsif direction == 'north'
         if map.can_move_n == false
           puts "The way is blocked."
+        elsif map.check_walls_n == true
+          puts "There is an obstruction."
         else
           map.move('north')
         end
